@@ -37,9 +37,12 @@ class ModuleTest extends \PHPUnit_Framework_TestCase
 
         $sharedEventManager->expects($this->once())
             ->method('attach')
-            ->with(MvcEvent::EVENT_DISPATCH, array($this->module, 'checkForBan'), 1);
+            ->with('Eye4web\ZfcUser\Warnings\Service\WarningsService', 'addWarning.post', array($this->module, 'checkForBan'));
 
         $this->module->onBootstrap($mvcEvent);
+
+        $this->module->setApplication($application);
+        $this->module->getApplication();
     }
 
     /**
@@ -91,13 +94,12 @@ class ModuleTest extends \PHPUnit_Framework_TestCase
             ->method('getServiceManager')
             ->will($this->returnValue($serviceManager));
 
-        $mvcEvent = $this->getMock('Zend\Mvc\MvcEvent');
-        $mvcEvent->expects($this->once())
-            ->method('getApplication')
-            ->will($this->returnValue($application));
+        $this->module->setApplication($application);
+
+        $event = $this->getMock('Zend\EventManager\Event');
 
         $warning = $this->getMock('Eye4web\ZfcUser\Warnings\Entity\WarningInterface');
-        $mvcEvent->expects($this->once())
+        $event->expects($this->once())
             ->method('getParam')
             ->with('warning')
             ->will($this->returnValue($warning));
@@ -185,7 +187,7 @@ class ModuleTest extends \PHPUnit_Framework_TestCase
             }
         }
 
-        $this->module->checkForBan($mvcEvent);
+        $this->module->checkForBan($event);
     }
 
     public function testGetConfig()

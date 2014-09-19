@@ -18,21 +18,24 @@
 
 namespace Eye4web\ZfcUser\WarningsBan;
 
+use Zend\EventManager\Event;
 use Zend\Mvc\MvcEvent;
 
 class Module
 {
+    protected $application;
+
     public function onBootstrap(MvcEvent $e)
     {
-        $application = $e->getApplication();
+        $this->application = $e->getApplication();
 
-        $eventManager = $application->getEventManager()->getSharedManager();
-        $eventManager->attach(MvcEvent::EVENT_DISPATCH, array($this, 'checkForBan'), 1);
+        $eventManager = $this->application->getEventManager()->getSharedManager();
+        $eventManager->attach('Eye4web\ZfcUser\Warnings\Service\WarningsService', 'addWarning.post', array($this, 'checkForBan'));
     }
 
-    public function checkForBan(MvcEvent $e)
+    public function checkForBan(Event $e)
     {
-        $application = $e->getApplication();
+        $application = $this->application;
         $serviceLocator = $application->getServiceManager();
         $warningsService = $serviceLocator->get('Eye4web\ZfcUser\Warnings\Service\WarningsService');
         $userMapper = $serviceLocator->get('zfcuser_user_mapper');
@@ -59,7 +62,6 @@ class Module
                 $totalWeight += $warning->getWeight();
             }
 
-
             if ($totalWeight >= $warningsBanConfig->getWeightForBan()) {
                 $user->setIsBanned(true);
                 $user->setBannedReason($warningsBanConfig->getWeightBanReason());
@@ -72,5 +74,21 @@ class Module
     public function getConfig()
     {
         return include __DIR__ . '/../../../../config/module.config.php';
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getApplication()
+    {
+        return $this->application;
+    }
+
+    /**
+     * @param mixed $application
+     */
+    public function setApplication($application)
+    {
+        $this->application = $application;
     }
 }

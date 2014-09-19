@@ -4,20 +4,20 @@
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "ce67ff4a9ab4135d259a530ba2e5ec47",
+    "hash": "8034386201552e055f5ba08ac0333747",
     "packages": [
         {
             "name": "eye4web/eye4web-zfc-user-ban",
-            "version": "0.0.1",
+            "version": "dev-master",
             "source": {
                 "type": "git",
                 "url": "git@github.com:Eye4web/ZfcUserBan.git",
-                "reference": "4e8b4d0468bb9570cfc81381239a654d19581328"
+                "reference": "7c5b2f20dfc95348b73ca7b2273b7729f5ba0807"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Eye4web/ZfcUserBan/zipball/4e8b4d0468bb9570cfc81381239a654d19581328",
-                "reference": "4e8b4d0468bb9570cfc81381239a654d19581328",
+                "url": "https://api.github.com/repos/Eye4web/ZfcUserBan/zipball/7c5b2f20dfc95348b73ca7b2273b7729f5ba0807",
+                "reference": "7c5b2f20dfc95348b73ca7b2273b7729f5ba0807",
                 "shasum": ""
             },
             "require": {
@@ -61,7 +61,7 @@
                 "zf2",
                 "zfcuser"
             ],
-            "time": "2014-09-06 20:46:04"
+            "time": "2014-09-18 19:26:50"
         },
         {
             "name": "eye4web/eye4web-zfc-user-warnings",
@@ -2670,6 +2670,7 @@
     "aliases": [],
     "minimum-stability": "stable",
     "stability-flags": {
+        "eye4web/eye4web-zfc-user-ban": 20,
         "eye4web/eye4web-zfc-user-warnings": 20,
         "codeclimate/php-test-reporter": 20
     },
