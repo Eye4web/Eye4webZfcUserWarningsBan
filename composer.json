@@ -22,7 +22,7 @@
     },
     "require": {
         "php": ">=5.4",
-        "eye4web/eye4web-zfc-user-ban": "~0.0.1",
+        "eye4web/eye4web-zfc-user-ban": "dev-master",
         "eye4web/eye4web-zfc-user-warnings": "dev-master"
     },
     "autoload": {
