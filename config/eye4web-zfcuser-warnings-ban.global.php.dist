@@ -1,0 +1,31 @@
+<?php
+
+return [
+    'eye4web' => [
+        'warnings-ban' => [
+            /*
+             * How many warnings should the user get before being banned
+             * Default: false
+             */
+            'warningsForBan' => false,
+
+            /*
+             * How much warnings weight should the user get before being banned
+             * Default: false
+             */
+            'weightForBan' => false,
+
+            /*
+             * The reason the user have been banned for having to many warnings
+             * Default: You've been ban for having to much warnings
+             */
+            '$banWarningsReason' => 'You\'ve been ban for having to much warnings',
+
+            /*
+             * The reason the user have been banned for having to much warnings weight
+             * Default: You've been ban for having to much warnings weight
+             */
+            '$banWeightReason' => 'You\'ve been ban for having to much warnings weight',
+        ]
+    ]
+];

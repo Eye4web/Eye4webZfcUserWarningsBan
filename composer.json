@@ -1,0 +1,42 @@
+{
+    "name": "eye4web/eye4web-zfc-user-warnings-ban",
+    "description": "Ban user by number of warnings/total weight",
+    "type": "library",
+    "license": "MIT",
+    "keywords": [
+        "zf2",
+        "ZfcUser",
+        "module"
+    ],
+    "homepage": "https://github.com/Eye4web/Eye4webZfcUserWarningsBan",
+    "authors": [
+        {
+            "name": "Daniel Strøm",
+            "email": "ds@eye4web.dk"
+        }
+    ],
+    "extra": {
+        "branch-alias": {
+            "dev-master": "master-dev"
+        }
+    },
+    "require": {
+        "php": ">=5.4",
+        "eye4web/eye4web-zfc-user-ban": "~0.0.1",
+        "eye4web/eye4web-zfc-user-warnings": "dev-master"
+    },
+    "autoload": {
+        "psr-0": {
+            "Eye4web\\ZfcUser\\WarningsBan": "src/",
+            "Eye4webZfcUserWarningsBanTest\\Eye4web\\ZfcUser\\WarningsBan": "tests/"
+        },
+        "classmap": [
+            "./src/Eye4web/ZfcUser/WarningsBan/Module.php"
+        ]
+    },
+    "require-dev" : {
+        "phpunit/phpunit" : "4.*",
+        "squizlabs/php_codesniffer" : "1.5.*",
+        "codeclimate/php-test-reporter": "dev-master"
+    }
+}
