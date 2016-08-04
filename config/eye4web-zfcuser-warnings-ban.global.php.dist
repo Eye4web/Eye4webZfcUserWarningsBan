@@ -19,13 +19,13 @@ return [
              * The reason the user have been banned for having to many warnings
              * Default: You've been ban for having to much warnings
              */
-            '$banWarningsReason' => 'You\'ve been ban for having to much warnings',
+            'warningsbanReason' => 'You\'ve been ban for having to much warnings',
 
             /*
              * The reason the user have been banned for having to much warnings weight
              * Default: You've been ban for having to much warnings weight
              */
-            '$banWeightReason' => 'You\'ve been ban for having to much warnings weight',
+            'weightbanReason' => 'You\'ve been ban for having to much warnings weight',
         ]
     ]
 ];
