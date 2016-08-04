@@ -15,15 +15,10 @@
             "email": "ds@eye4web.dk"
         }
     ],
-    "extra": {
-        "branch-alias": {
-            "dev-master": "master-dev"
-        }
-    },
     "require": {
         "php": ">=5.4",
-        "eye4web/eye4web-zfc-user-ban": "dev-master",
-        "eye4web/eye4web-zfc-user-warnings": "dev-master"
+        "eye4web/eye4web-zfc-user-ban": "~0.0",
+        "eye4web/eye4web-zfc-user-warnings": "~0.0"
     },
     "autoload": {
         "psr-0": {
