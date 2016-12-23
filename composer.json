@@ -17,8 +17,8 @@
     ],
     "require": {
         "php": ">=5.4",
-        "eye4web/eye4web-zfc-user-ban": "~0.0",
-        "eye4web/eye4web-zfc-user-warnings": "~0.0"
+        "eye4web/eye4web-zfc-user-ban": "^0.0",
+        "eye4web/eye4web-zfc-user-warnings": "^0.0"
     },
     "autoload": {
         "psr-0": {
